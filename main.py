@@ -1,5 +1,5 @@
 from models.taskModel import Task
-from task_manager import addTask, readJson, get_ID
+from task_manager import addTask, readJson, get_ID, updateTask
 import sys
 
 all_arguments = sys.argv
@@ -21,8 +21,22 @@ match action:
             print("Provide one task for adding at a time.") 
             sys.exit()
         task_description = all_arguments[2]
+        if (task_description == ''):
+            print("Provide a meaningful task.") 
+            sys.exit()
         id_number = get_ID()
         addTask(id_number, task_description)
+    case 'update':
+        if (len(all_arguments) != 4):
+            print("Provide one task for updating at a time.") 
+            sys.exit()
+        task_id = all_arguments[2]
+        task_description = all_arguments[3]
+        if (task_description == ''):
+            print("Provide a meaningful task.") 
+            sys.exit()
+        updateTask(task_id, task_description)
+        
     case 'list':
         result = readJson()
         print(result)
