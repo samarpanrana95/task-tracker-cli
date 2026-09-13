@@ -70,7 +70,7 @@ def mark_in_progress(id_number):
     else:
         print(f'Failed to find task (ID: {id_number})')
 
-def mark_in_progress(id_number):
+def mark_done(id_number):
     existing_data = readJson()
     task_found = False
     task_index = 0
@@ -83,7 +83,7 @@ def mark_in_progress(id_number):
     with open('data.json', 'w') as file:
         file.write(json.dumps(existing_data, indent=4))
     if task_found == True:
-        print(f'Task marked in progress successfully (ID: {id_number})')
+        print(f'Task marked done successfully (ID: {id_number})')
     else:
         print(f'Failed to find task (ID: {id_number})')
 
