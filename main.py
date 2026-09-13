@@ -1,5 +1,5 @@
 from models.taskModel import Task
-from task_manager import addTask, readJson, get_ID, updateTask, deleteTask, mark_in_progress, mark_done
+from task_manager import addTask, readJson, get_ID, updateTask, deleteTask, mark_in_progress, mark_done, list
 import sys
 
 all_arguments = sys.argv
@@ -70,5 +70,12 @@ match action:
                 sys.exit()
         mark_done(task_id)
     case 'list':
-        result = readJson()
-        print(result)
+        listing_type = ''
+        if (len(all_arguments) == 2):
+            listing_type = 'normal'
+        elif (len(all_arguments) == 3 and (all_arguments[2] == 'done') or (all_arguments[2] == 'todo') or (all_arguments[2] == 'in-progress')):
+            listing_type = all_arguments[2]
+        else:
+            print('For all listings, use only list. For listing done or todo or in-progress, use list done, list todo, list in-progress respectively.')
+            sys.exit()
+        list(listing_type)

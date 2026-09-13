@@ -1,23 +1,16 @@
 [
     {
-        "id": 1,
+        "id": 2,
         "status": "Done",
-        "description": "Go to the shoo",
-        "createdAt": "2026-09-14 01:42",
-        "updatedAt": "2026-09-14 01:42"
+        "description": "Eat some food",
+        "createdAt": "2026-09-14 02:07",
+        "updatedAt": "2026-09-14 02:07"
     },
     {
-        "id": 4,
-        "status": "In-progress",
-        "description": "Sing",
-        "createdAt": "2026-09-14 01:42",
-        "updatedAt": "2026-09-14 01:42"
-    },
-    {
-        "id": 3,
-        "status": "todo",
-        "description": "Wash the clothes",
-        "createdAt": "2026-09-14 01:43",
-        "updatedAt": "2026-09-14 01:43"
+        "id": 1,
+        "status": "Todo",
+        "description": "Go to the gym",
+        "createdAt": "2026-09-14 02:08",
+        "updatedAt": "2026-09-14 02:08"
     }
 ]

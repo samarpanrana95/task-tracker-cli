@@ -96,3 +96,22 @@ def get_ID():
         else:
             break
     return id_number
+
+def list (listing_type):
+    existing_data = readJson()
+    if (len(existing_data) == 0):
+        print("Nothing to list.")
+        return
+    task_found = False
+    if listing_type == 'normal':
+        for task in existing_data:
+            task_found = True
+            print(f'Id : {task['id']}\nDescription: {task['description']}\nStatus : {task['status']}\nCreatedAt : {task['createdAt']}\nUpdatedAt : {task['updatedAt']}\n\n')
+    else:
+        for task in existing_data:
+            if (task['status'] == listing_type.capitalize()):
+                task_found = True
+                print(f'Id : {task['id']}\nDescription: {task['description']}\nStatus : {task['status']}\nCreatedAt : {task['createdAt']}\nUpdatedAt : {task['updatedAt']}\n\n')
+    if (task_found == False):
+        print("Nothing to list.")
+        return

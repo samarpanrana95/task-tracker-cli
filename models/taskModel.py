@@ -3,7 +3,7 @@ from datetime import datetime
 class Task:
     def __init__(self, id_number, description):
         self.id = id_number
-        self.status = 'todo'
+        self.status = 'Todo'
         self.description = description
         self.createdAt = datetime.now().strftime('%Y-%m-%d %H:%M')
         self.updatedAt = self.createdAt
