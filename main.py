@@ -1,5 +1,5 @@
 from models.taskModel import Task
-from task_manager import addTask, readJson, get_ID, updateTask, deleteTask
+from task_manager import addTask, readJson, get_ID, updateTask, deleteTask, mark_in_progress, mark_done
 import sys
 
 all_arguments = sys.argv
@@ -47,6 +47,28 @@ match action:
             print("Provide a correct id.") 
             sys.exit()
         deleteTask(task_id)
+    case 'mark-in-progress':
+        if (len(all_arguments) != 3):
+                print("Provide one task for marking at a time.") 
+                sys.exit()
+        task_id = all_arguments[2]
+        try:
+                int(task_id) > 0
+        except:
+                print("Provide a correct id.") 
+                sys.exit()
+        mark_in_progress(task_id)
+    case 'mark-done':
+        if (len(all_arguments) != 3):
+                print("Provide one task for marking at a time.") 
+                sys.exit()
+        task_id = all_arguments[2]
+        try:
+                int(task_id) > 0
+        except:
+                print("Provide a correct id.") 
+                sys.exit()
+        mark_done(task_id)
     case 'list':
         result = readJson()
         print(result)
