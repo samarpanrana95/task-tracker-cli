@@ -36,6 +36,23 @@ def updateTask(id_number, description):
     else:
         print(f'Failed to find task (ID: {id_number})')
 
+def deleteTask(id_number):
+    existing_data = readJson()
+    task_found = False
+    task_index = 0
+    for task in existing_data:
+        if (task['id'] == int(id_number)):
+            existing_data.remove(task)
+            task_found = True
+            break
+        task_index = task_index + 1
+    with open('data.json', 'w') as file:
+        file.write(json.dumps(existing_data, indent=4))
+    if task_found == True:
+        print(f'Task deleted successfully (ID: {id_number})')
+    else:
+        print(f'Failed to find task (ID: {id_number})')
+
 def get_ID():
     existing_data = readJson()
     id_number = 1

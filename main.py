@@ -1,5 +1,5 @@
 from models.taskModel import Task
-from task_manager import addTask, readJson, get_ID, updateTask
+from task_manager import addTask, readJson, get_ID, updateTask, deleteTask
 import sys
 
 all_arguments = sys.argv
@@ -36,7 +36,17 @@ match action:
             print("Provide a meaningful task.") 
             sys.exit()
         updateTask(task_id, task_description)
-        
+    case 'delete':
+        if (len(all_arguments) != 3):
+            print("Provide one task for deleting at a time.") 
+            sys.exit()
+        task_id = all_arguments[2]
+        try:
+            int(task_id) > 0
+        except:
+            print("Provide a correct id.") 
+            sys.exit()
+        deleteTask(task_id)
     case 'list':
         result = readJson()
         print(result)
