@@ -1,0 +1,21 @@
+{
+  "name": "task-tracker-cli",
+  "version": "1.0.0",
+  "description": "A simple command line interface to track what I need to do, what I have done and what I'm currently working on.",
+  "main": "index.js",
+  "scripts": {
+    "task-cli": "python main.py",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samarpanrana95/task-tracker-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samarpanrana95/task-tracker-cli/issues"
+  },
+  "homepage": "https://github.com/samarpanrana95/task-tracker-cli#readme"
+}

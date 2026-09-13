@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "status": "todo",
+        "description": "Go to the gym",
+        "createdAt": "2026-09-13 12:30",
+        "updatedAt": "2026-09-13 12:30"
+    },
+    {
+        "id": 2,
+        "status": "todo",
+        "description": "Play basketball",
+        "createdAt": "2026-09-13 12:30",
+        "updatedAt": "2026-09-13 12:30"
+    }
+]

@@ -1,1 +1,28 @@
-print('hello world')
+from models.taskModel import Task
+from task_manager import addTask, readJson, get_ID
+import sys
+
+all_arguments = sys.argv
+if (len(all_arguments) > 4):
+    print("Too many arguments")
+    sys.exit()
+elif (len(all_arguments) <= 1):
+    print("Provide more arguments.")
+    sys.exit()
+else:
+    action = all_arguments[1]
+    if ((action != 'add') and (action != 'update') and (action != 'delete') and (action != 'list') and (action != 'mark-in-progress') and (action != 'mark-done')):
+        print("Use a valid command, add or update or delete or list or mark-done or mark-in-progress")
+        sys.exit()
+
+match action:
+    case 'add':
+        if (len(all_arguments) != 3):
+            print("Provide one task for adding at a time.") 
+            sys.exit()
+        task_description = all_arguments[2]
+        id_number = get_ID()
+        addTask(id_number, task_description)
+    case 'list':
+        result = readJson()
+        print(result)
