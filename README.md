@@ -9,3 +9,5 @@ Add, update and delete tasks
 Mark a task as in progress or done
 List all the tasks
 List all the tasks that are done / not done / in progress 
+
+Run the program through npm run task-cli 
